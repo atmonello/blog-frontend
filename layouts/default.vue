@@ -1,31 +1,25 @@
 <template>
   <v-app dark>
+    <AppToolbar />
     <v-main>
       <v-container>
-        <ul>
-          <li>
-            <nuxt-link to="/">Home</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/about">About</nuxt-link>
-          </li>
-          <li v-for="category in categories" :key="category.id">
-            <nuxt-link
-              :to="{ name: 'categories-id', params: { id: category.id } }"
-              >{{ category.name }}
-            </nuxt-link>
-          </li>
-        </ul>
         <nuxt />
       </v-container>
     </v-main>
+    <AppDarkModeButton />
   </v-app>
 </template>
 
 <script>
+import AppToolbar from "~/components/Navbar";
+import AppDarkModeButton from "~/components/DarkModeButton";
 import categoriesQuery from "~/apollo/queries/category/categories";
 
 export default {
+  components: {
+    AppToolbar,
+    AppDarkModeButton,
+  },
   data() {
     return {
       categories: [],

@@ -18,5 +18,6 @@ module.exports = {
   // add your custom rules here
   rules: {
     "vue/no-v-html": ["off"],
+    "vue/v-slot-style": ["off"],
   },
 };
