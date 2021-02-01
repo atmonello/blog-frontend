@@ -1,4 +1,5 @@
 import colors from "vuetify/es5/util/colors";
+require("dotenv").config();
 
 export default {
   env: {
@@ -54,12 +55,36 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    "@nuxtjs/dotenv",
+    "@nuxtjs/auth",
     "@nuxtjs/apollo",
     "@nuxtjs/markdownit",
   ],
 
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "auth/local",
+            method: "post",
+            propertyName: "jwt",
+          },
+          user: {
+            url: "users/me",
+            method: "get",
+            propertyName: false,
+          },
+          logout: false,
+        },
+      },
+    },
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.API_AUTH_URL || "http://localhost:1337",
+  },
 
   apollo: {
     clientConfigs: {
@@ -81,7 +106,7 @@ export default {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
