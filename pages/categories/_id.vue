@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <v-container>
     <div v-if="!!articles.length">
       <nuxt-link
         v-for="article in articles"
@@ -12,7 +12,7 @@
     <div v-else>
       <p>No articles found in this category.</p>
     </div>
-  </main>
+  </v-container>
 </template>
 
 <script>

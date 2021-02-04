@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <v-container>
     <li v-for="category in categories" :key="category.id">
       {{ category.name }}
     </li>
-  </main>
+  </v-container>
 </template>
 <script>
 import categoriesQuery from "~/apollo/queries/category/categories";

@@ -2,9 +2,7 @@
   <v-app dark>
     <AppToolbar />
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
     <AppDarkModeButton />
   </v-app>
