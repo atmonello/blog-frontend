@@ -2,12 +2,19 @@ query Articles {
   articles {
     id
     title
+    published_at
+    updated_at
     content
+
     image {
-      url
-    }
-    category {
       name
+      url
+      formats
+      previewUrl
+    }
+    categories {
+      name
+      id
     }
   }
 }
