@@ -1,14 +1,5 @@
 <template>
-  <v-btn
-    class="ml-2 mb-2"
-    elevation="2"
-    fab
-    icon
-    bottom
-    left
-    small
-    @click="setTheme"
-  >
+  <v-btn elevation="2" fab icon small fixed bottom left @click="setTheme">
     <v-icon>{{
       isDark ? "mdi-white-balance-sunny" : "mdi-weather-night"
     }}</v-icon>
