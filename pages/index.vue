@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return this.$dateFns.format(new Date(date), "MM-yyyy");
+      return this.$dateFns.format(new Date(date), "MM/yyyy");
     },
   },
 };
