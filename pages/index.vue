@@ -28,17 +28,17 @@
               <v-card-title>
                 <span class="text-h5">{{ job.company }}</span>
                 <v-spacer></v-spacer>
-                <span class="text-subtitle-2 font-weight-thin">{{
+                <span class="text-subtitle-1 font-weight-thin">{{
                   formatDate(job.start)
                 }}</span>
                 <span
                   v-if="job.finish"
-                  class="text-subtitle-2 font-weight-thin"
+                  class="text-subtitle-1 font-weight-thin"
                 >
                   &nbsp;-
                   {{ formatDate(job.finish) }}</span
                 >
-                <span v-else class="text-subtitle-2 font-weight-thin">
+                <span v-else class="text-subtitle-1 font-weight-thin">
                   &nbsp;- Current</span
                 >
               </v-card-title>
